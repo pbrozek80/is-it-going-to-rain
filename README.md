@@ -1,4 +1,4 @@
-# is-it-going-to-rain
+# Is It Going To Rain?
 Simple Flask OpenWeather API endpoint that shows prediction of rain in our area
 ![is-it-going-to-rain](https://github.com/pbrozek80/is-it-going-to-rain/assets/172545917/83299309-60c3-41dc-92be-9def98fb9627)
 
