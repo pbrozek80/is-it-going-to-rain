@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include "header.html" %}
+
+  <!-- Page Header -->
+
+  <!-- Main Content -->
+  <div>
+
+
+
+<!-- Main content goes here-->
+<div align="center"><img src="{{ url_for('static', filename='img/image2.jpg')}}"></div>
+
+<h3 class="site-heading" align="center">12h Rain prediction for Krakow, PL</h3>
+
+<div class="table">
+  <div class="row header green">
+    <div class="cell">Timestamp</div>
+    <div class="cell">Probability of rain (%)</div>
+    <div class="cell">Rain amount (mm)</div>
+  </div>
+{% for key, timestamp_value in rain_dict.items() %}
+  <div class="row">
+    <div class="cell">{{ key }}</div>
+  <!-- Przeprojektować rain_dict z nazwami kluczy na ludzkie, by je wyświetlać jako tekst -->
+   {% for key2, rain_value in timestamp_value.items() %}
+    <div class="cell">{% if rain_value > 0 %}<strong>{{rain_value}}</strong>
+    {% else %}
+    {{rain_value}}
+    {% endif %}</div>
+   {% endfor %}
+  </div>
+{% endfor %}
+
+</div>
+
+  </div>
+
+
+
+
+{% include "footer.html" %}
+{% endblock %}
